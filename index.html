@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Herramientas de Productividad para GNU/Linux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Herramientas de Productividad para GNU/Linux (XFCE)</h1>
+    </header>
+
+    <main class="container">
+        <div class="project-grid">
+            
+            <!-- Proyecto 1: Historial de Portapapeles -->
+            <article class="project-card">
+                <img src="https://raw.githubusercontent.com/hluk/CopyQ/main/doc/copyq-web.png" alt="Captura de pantalla de CopyQ">
+                <div class="project-content">
+                    <h2>1. Historial de Portapapeles</h2>
+                    <p>
+                        Con <strong>CopyQ</strong>, puedes tener un historial completo de todo lo que copias. Esto te permite buscar y recuperar texto, enlaces o incluso imágenes que hayas copiado previamente, de una forma muy similar a la funcionalidad 'Windows + V'.
+                    </p>
+                    <pre><code># Comando de instalación (ej. Ubuntu)
+sudo apt install copyq
+
+# Comando para el atajo de teclado
+copyq toggle</code></pre>
+                </div>
+            </article>
+
+            <!-- Proyecto 2: Captura de Texto (OCR) -->
+            <article class="project-card">
+                <img src="https://raw.githubusercontent.com/naelstrof/maim/master/doc/maim-select.png" alt="Ejemplo de selección de pantalla para OCR">
+                <div class="project-content">
+                    <h2>2. Captura de Texto (OCR)</h2>
+                    <p>
+                        Esta herramienta te permite "leer" el texto de cualquier parte de tu pantalla, aunque sea una imagen o un video. Simplemente seleccionas un área y el texto reconocido se copia automáticamente a tu portapapeles.
+                    </p>
+                    <pre><code># Comando de instalación (ej. Ubuntu)
+sudo apt install maim tesseract-ocr xclip
+
+# Comando del script ocr.sh
+maim -s | tesseract stdin stdout | xclip -sel c</code></pre>
+                </div>
+            </article>
+
+            <!-- Proyecto 3: Selector de Color -->
+            <article class="project-card">
+                <img src="https://gpick.org/images/screenshots/screenshot1.png" alt="Captura de pantalla de gpick">
+                <div class="project-content">
+                    <h2>3. Selector de Color Global</h2>
+                    <p>
+                        Con <strong>gpick</strong>, puedes obtener el código de color exacto de cualquier píxel en tu pantalla. Es una herramienta indispensable para desarrolladores web y diseñadores que necesitan capturar colores de referencia rápidamente.
+                    </p>
+                    <pre><code># Comando de instalación (ej. Ubuntu)
+sudo apt install gpick
+
+# Comando para el atajo de teclado
+gpick</code></pre>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Guía creada para facilitar la transición y mejorar la productividad en entornos GNU/Linux.</p>
+    </footer>
+
+</body>
+</html>
