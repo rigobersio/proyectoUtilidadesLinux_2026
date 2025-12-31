@@ -57,33 +57,57 @@ Este script te permitirá seleccionar un área de la pantalla y copiará instant
         ```bash
         chmod +x ocr.sh
         ```
+    -   **Alternativa:** Si deseas que el script esté disponible globalmente sin especificar la ruta completa, puedes copiarlo a un directorio en tu `$PATH` (como `/usr/bin`).
+        ```bash
+        sudo cp ocr.sh /usr/bin/ocr.sh
+        ```
+        *Precaución: Al copiar scripts a `/usr/bin`, asegúrate de que son de confianza y no tienen efectos secundarios no deseados, ya que se ejecutarán con privilegios elevados si los invocas con `sudo` o si el sistema los llama.*
 
 4.  **Asignar Atajo de Teclado:**
     -   Ve a `Menú de Aplicaciones` > `Configuración` > `Teclado`.
     -   En `Atajos de aplicación`, pulsa `Añadir`.
-    -   **Comando:** `/home/neon/Documents/repos/proyectoUtilidadesLinux_2026/ocr.sh` (asegúrate de que la ruta es correcta).
+    -   **Comando:** `/home/neon/Documents/repos/proyectoUtilidadesLinux_2026/ocr.sh` (o `ocr.sh` si lo copiaste a `/usr/bin`).
     -   Pulsa `Aceptar` y asigna una combinación de teclas (ej. `Super + C`).
 
 ---
 
 ## 3. Selector de Color Global
 
-Esta herramienta te permite hacer clic en cualquier lugar de la pantalla para capturar el código de color de un píxel y copiarlo a tu portapapeles.
+Esta herramienta te permite hacer clic en cualquier lugar de la pantalla para capturar el código de color de un píxel.
 
-### Pasos:
+### Opción A: `xcolor` (Scriptable)
 
-1.  **Instalar Dependencia (`xcolor`):**
-    -   **Debian/Ubuntu/Mint:** `sudo apt install xcolor`
+Este método es ideal si está disponible en tu sistema, ya que copia el color directamente al portapapeles.
+
+1.  **Instalar `xcolor`:**
+    *Nota: El nombre del paquete puede variar. En sistemas Arch, suele ser `xcolor`.*
     -   **Arch Linux/Manjaro:** `sudo pacman -S xcolor`
-    -   **Fedora:** `sudo dnf install xcolor`
 
 2.  **Asignar Atajo de Teclado:**
-    No se necesita un script; el comando se puede añadir directamente.
     -   Ve a `Menú de Aplicaciones` > `Configuración` > `Teclado`.
     -   En `Atajos de aplicación`, pulsa `Añadir`.
     -   Pega el siguiente comando completo:
         ```bash
         xcolor | tr -d '\n' | xclip -selection clipboard
         ```
-        *(Nota: `tr -d '\n'` elimina el salto de línea para obtener un código de color limpio).*
     -   Pulsa `Aceptar` y asigna un atajo (ej. `Super + D`).
+
+### Opción B (Alternativa Recomendada): `gpick` (Gráfica y Fiable)
+
+Si `xcolor` no está disponible (común en sistemas Debian/Ubuntu), `gpick` es una excelente alternativa gráfica.
+
+1.  **Instalar `gpick`:**
+    -   **Debian/Ubuntu/Mint:** `sudo apt install gpick`
+    -   **Fedora:** `sudo dnf install gpick`
+
+2.  **Uso:**
+    -   Abre `gpick` desde tu menú de aplicaciones.
+    -   Aparecerá una pequeña ventana flotante con un ícono de cuentagotas. Haz clic en él.
+    -   Tu cursor cambiará. Haz clic en cualquier lugar de la pantalla.
+    -   El color se añadirá a la paleta en la ventana principal de `gpick`, donde puedes seleccionar y copiar fácilmente el código hexadecimal.
+
+3.  **Asignar Atajo de Teclado (para abrirlo rápido):**
+    -   Ve a `Menú de Aplicaciones` > `Configuración` > `Teclado`.
+    -   En `Atajos de aplicación`, pulsa `Añadir`.
+    -   **Comando:** `gpick`
+    -   Pulsa `Aceptar` y asigna un atajo (ej. `Super + D`). Esto te permitirá lanzar la aplicación instantáneamente.
