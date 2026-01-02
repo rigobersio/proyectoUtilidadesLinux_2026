@@ -6,6 +6,8 @@ Esta guía proporciona instrucciones para configurar tres herramientas de alta e
 
 ## 1. Historial de Portapapeles (Estilo Windows + V)
 
+**Nota Importante:** Para que esta funcionalidad esté activa, el programa `copyq` debe estar ejecutándose en segundo plano. Los siguientes pasos no solo lo instalan, sino que también aseguran que se inicie automáticamente con el sistema.
+
 Esta herramienta te dará un historial consultable de todo lo que copias (texto, imágenes, etc.). Usaremos **CopyQ**.
 
 ### Pasos:
